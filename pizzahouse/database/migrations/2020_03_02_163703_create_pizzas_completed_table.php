@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePizzasTable extends Migration
+class CreatePizzasCompletedTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreatePizzasTable extends Migration
      */
     public function up()
     {
-        /*
-        | ALTER TABLE `pizzas` ADD CONSTRAINT `pType` FOREIGN KEY (`type`) 
-        REFERENCES `pizzas_type_prices` (`name`);
-        */
-        Schema::create('pizzas', function (Blueprint $table) {
+        Schema::create('pizzas_completed', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('base');
             $table->string('type');
-            //$table->foreign('type')->references('pizzas_type_prices')->on('name');
             $table->json('toppings');
             $table->float('price');
             $table->timestamps();
@@ -36,6 +31,6 @@ class CreatePizzasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizzas');
+        Schema::dropIfExists('pizzas_completed');
     }
 }
