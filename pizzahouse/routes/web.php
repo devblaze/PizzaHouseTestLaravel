@@ -10,19 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes([
+    //'register' => false
+]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PizzaController@welcome')->name('pizzas.welcome');
+Route::get('/pizzas', 'PizzaController@index')->name('pizzas.index')->middleware('auth');
+Route::post('/pizzas', 'PizzaController@store')->name('pizzas.store');
+Route::get('/pizzas/create', 'PizzaController@create')->name('pizzas.create');
+Route::get('/pizzas/{id}', 'PizzaController@show')->name('pizzas.show')->middleware('auth');
+Route::delete('/pizzas/{id}', 'PizzaController@destroy')->name('pizzas.destroy')->middleware('auth');
 
-Route::get('/pizzas', 'PizzaController@index');
-Route::post('/pizzas', 'PizzaController@store');
-Route::get('/pizzas/create', 'PizzaController@create');
-Route::get('/pizzas/{id}', 'PizzaController@show');
-Route::delete('/pizzas/{id}', 'PizzaController@destroy');
-
-Auth::routes();
+Auth::routes([
+    //'register' => false
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/pizzas{id}', 'PizzaController@test');

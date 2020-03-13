@@ -24,7 +24,7 @@ class CreatePizzasTable extends Migration
             $table->string('type');
             //$table->foreign('type')->references('pizzas_type_prices')->on('name');
             $table->json('toppings');
-            $table->float('price');
+            //$table->float('price');
             $table->timestamps();
         });
     }

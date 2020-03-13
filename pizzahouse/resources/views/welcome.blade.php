@@ -21,7 +21,7 @@
                 <div class="title m-b-md">
                     Pizza House
                 </div>
-                <a href="/pizzas/create" class="link-create">Make a Pizza</a>
+                <a href="{{ route('pizzas.create') }}" class="link-create">Make a Pizza</a>
                 <div class="mssg">{{ session('mssg') }}</div>
             </div>
         </div>

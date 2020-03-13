@@ -8,6 +8,16 @@ use App\PizzasCompleted;
 
 class PizzaController extends Controller
 {
+    /*
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    */
+
+    public function welcome(){
+        return view('welcome');
+    }
+    
     public function index(){
         
         /*
@@ -52,7 +62,7 @@ class PizzaController extends Controller
         $pizza->name = request('name');
         $pizza->type = request('type');
         $pizza->base = request('base');
-        $pizza->price = request('price');
+        //$pizza->price = request('price');
         $pizza->toppings = request('toppings');
         $pizza->save();
 

@@ -10,6 +10,7 @@
         <label for="name">Your name:</label>
         <input type="text" id="name" name="name">
         <br>
+        
         <label for="name">Choose Pizza type:</label>
         <select name="type" id="type">
             <option value="type1">Type 1</option>
@@ -30,9 +31,9 @@
             <input type="checkbox" name="toppings[]" value="top3">Top 3<br>
         </fieldset>
         <br>
-        <label for="price">Price:</label>
+        <!-- <label for="price">Price:</label>
         <input type="text" id="price" name="price">
-        <br>
+        <br> -->
         <input type="submit" value="Order Pizza">
 </div>
 
