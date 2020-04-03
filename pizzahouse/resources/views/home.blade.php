@@ -16,7 +16,9 @@
 
                     You are logged in!
                     <br>
-                    <p><a href="/pizzas">View all Pizza Orders</a></p>
+                    <br>
+                    <p><a href="{{ route('pizzas.store') }}">View all Pizza Orders</a></p>
+                    <p><a href="{{ route('kebab.orders') }}">View all Kebab Order</a></p>
                 </div>
             </div>
         </div>

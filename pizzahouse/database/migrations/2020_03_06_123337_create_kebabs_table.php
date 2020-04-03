@@ -15,6 +15,10 @@ class CreateKebabsTable extends Migration
     {
         Schema::create('kebabs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('bread');
+            $table->string('meat');
+            $table->json('saues');
+            $table->json('extras');
             $table->timestamps();
         });
     }

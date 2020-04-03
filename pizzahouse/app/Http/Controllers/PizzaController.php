@@ -72,13 +72,6 @@ class PizzaController extends Controller
 
     public function destroy($id){
         $pizza = Pizza::findOrFail($id);
-        $pizzas_completed = new PizzasCompleted();
-        $pizzas_completed->type = $pizza->type;
-        $pizzas_completed->base = $pizza->base;
-        $pizzas_completed->name = $pizza->name;
-        $pizzas_completed->price = $pizza->price;
-        $pizzas_completed->toppings = $pizza->toppings;
-        $pizzas_completed->save();
         $pizza->delete();
 
         return redirect('/pizzas')->with('mssg', 'Order Completed!');

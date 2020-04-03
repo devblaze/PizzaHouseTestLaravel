@@ -22,6 +22,8 @@
                     Pizza House
                 </div>
                 <a href="{{ route('pizzas.create') }}" class="link-create">Make a Pizza</a>
+                <br>
+                <a href="{{ route('kebab.create') }}" class="link-create">Make a Kebab</a>
                 <div class="mssg">{{ session('mssg') }}</div>
             </div>
         </div>

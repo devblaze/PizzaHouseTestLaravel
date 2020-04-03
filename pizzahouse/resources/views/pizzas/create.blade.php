@@ -4,7 +4,8 @@
 
 <div class="wrapper create-pizza">
     <h1>Create a New Pizza</h1>
-    <form action="/pizzas" method="POST">
+    <!-- <form action="/pizzas" method="POST"> -->
+    <form action="{{ route('pizzas.index') }}" method="POST">
         @csrf
         <br>
         <label for="name">Your name:</label>
